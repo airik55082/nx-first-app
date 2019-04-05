@@ -63,4 +63,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   - `Cypress`
   - default for others
 - `ng serve ui`
-- 
+- Add `start` component to `ui` project
+  - `ng g component start --project=ui --export`
+- `yarn add angular/flex-layout @angular/cdk --save`
+  - `rm -rf node_modules/`
+  - `yarn`
