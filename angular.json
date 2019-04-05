@@ -2,7 +2,123 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "mesp": {
+      "root": "apps/mesp/",
+      "sourceRoot": "apps/mesp/src",
+      "projectType": "application",
+      "prefix": "nx-first-app",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mesp",
+            "index": "apps/mesp/src/index.html",
+            "main": "apps/mesp/src/main.ts",
+            "polyfills": "apps/mesp/src/polyfills.ts",
+            "tsConfig": "apps/mesp/tsconfig.app.json",
+            "assets": ["apps/mesp/src/favicon.ico", "apps/mesp/src/assets"],
+            "styles": ["apps/mesp/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mesp/src/environments/environment.ts",
+                  "with": "apps/mesp/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mesp:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mesp:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mesp:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mesp/tsconfig.app.json",
+              "apps/mesp/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/mesp/jest.config.js",
+            "tsConfig": "apps/mesp/tsconfig.spec.json",
+            "setupFile": "apps/mesp/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "mesp-e2e": {
+      "root": "apps/mesp-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/mesp-e2e/cypress.json",
+            "tsConfig": "apps/mesp-e2e/tsconfig.e2e.json",
+            "devServerTarget": "mesp:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mesp:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mesp-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
@@ -17,5 +133,6 @@
     "@nrwl/schematics:library": {
       "style": "scss"
     }
-  }
+  },
+  "defaultProject": "mesp"
 }
