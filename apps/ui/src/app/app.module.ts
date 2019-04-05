@@ -11,10 +11,12 @@ import { StartComponent } from './start/start.component';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { environment } from '../environments/environment';
+import { SavingsBalanceComponent } from './savings-balance/savings-balance.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/start', pathMatch: 'full' },
-  { path: 'start', component: StartComponent }
+  { path: 'start', component: StartComponent },
+  { path: 'savings-balance', component: SavingsBalanceComponent }
 ];
 
 const appBaseHref = environment.BASE_HREF;
@@ -33,10 +35,11 @@ export function HttpLoaderFactory(http: HttpClient) {
       loader: { provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient] }
     })
   ],
-  declarations: [AppComponent, StartComponent],
+  declarations: [AppComponent, StartComponent, SavingsBalanceComponent],
   providers: [ 
     { provide: APP_BASE_HREF, useValue: appBaseHref }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [SavingsBalanceComponent]
 })
 export class AppModule {}
