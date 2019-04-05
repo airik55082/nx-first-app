@@ -39,3 +39,28 @@ Run `ng e2e` to execute the end-to-end tests via [Cypress](http://www.protractor
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Eric's Notes
+- Create `first-app` workspace
+  - `yarn create nx-workspace first-app`
+    - `scss`
+    - `empty`
+    - default for others
+- Initialize Git repo; pushed to remote
+- `git branch create-mesp-app`
+- Create `mesp` app
+  - `ng g application mesp`
+    - `Angular`
+    - `Jest`
+    - `Cypress`
+    - default for others
+- `ng serve mesp`
+- `git branch create-ui-app`
+- `git checkout create-ui-app`
+- `ng g application ui`
+  - `Angular`
+  - `Jest`
+  - `Cypress`
+  - default for others
+- `ng serve ui`
+- 
