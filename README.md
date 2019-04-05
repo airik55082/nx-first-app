@@ -70,3 +70,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   - `yarn`
 - Packages
   - `npm install @ngx-translate/http-loader --save`
+- Theme
+  - `ng generate lib theme --directory=shared`
+    - defaults
+- 

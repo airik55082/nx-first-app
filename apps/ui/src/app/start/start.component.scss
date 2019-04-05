@@ -1,0 +1,39 @@
+@import '../../../../../libs/shared/theme/src/lib/utilities.scss';
+@import '../../../../../libs/shared/theme/src/lib/variables.scss';
+
+.chart-container {
+  position: relative;
+  .chart-percent-label {
+    @include montserrat-bold(24px);
+    color: $outer-space;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.chart-description {
+  @include montserrat-regular(10px);
+  color: $darkgray;
+  line-height: 12px;
+  margin-top: -20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.hr {
+  color: $darkgray;
+  background-color: $darkgray;
+  height: 1px;
+  margin: 40px 0 20px 0;
+}
+
+.mobile-bottom-margin {
+  margin-bottom: 40px;
+}
+
+.quiz-step-h3,
+.quiz-step-p {
+  max-width: 373px;
+}

@@ -19,6 +19,9 @@
     },
     "ui-e2e": {
       "tags": []
+    },
+    "shared-theme": {
+      "tags": []
     }
   }
 }
