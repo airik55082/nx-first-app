@@ -1,3 +1,50 @@
-<p>
+<!-- <p>
   start works!
-</p>
+</p> -->
+<div fxLayout="column">
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="start center" fxLayoutAlign.lt-md="center center">
+    <div fxFlex.gt-sm="230px">
+      <div fxLayoutAlign.gt-sm="center">
+        <img
+          height="157"
+          width="155"
+          src="/assets/v4/mesp-piggy-yellow-exclamation.svg"
+          alt="Piggy Bank"
+          ngClass.lt-md="mobile-bottom-margin"
+        />
+      </div>
+    </div>
+    <div fxLayout="column" fxLayoutGap="30px">
+      <h2 class="quiz-step-h2">
+        {{ 'MY_EMERGENCY_SAVINGS_PLAN.START.TITLE' | translate }}
+      </h2>
+      <h3 class="quiz-step-h3">
+        {{ 'MY_EMERGENCY_SAVINGS_PLAN.START.SUBTITLE' | translate }}
+      </h3>
+    </div>
+  </div>
+  <hr class="hr" fxHide.lt-md />
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="start center" fxLayoutAlign.lt-md="center center">
+    <div fxFlex.gt-sm="230px">
+      <div class="chart-container" fxLayoutAlign="center">
+        <img src="/assets/v4/mesp-donut-chart-sixty-one-percent.svg" alt="Sixty One Percent" />
+        <div class="chart-percent-label">
+          {{ 'MY_EMERGENCY_SAVINGS_PLAN.START.PERCENT_LABEL' | translate }}
+        </div>
+      </div>
+      <p
+        class="chart-description"
+        ngClass.lt-md="mobile-bottom-margin"
+        [innerHtml]="'MY_EMERGENCY_SAVINGS_PLAN.START.CHART_DESCRIPTION' | translate"
+      ></p>
+    </div>
+    <div fxLayout="column" fxLayoutGap="30px">
+      <p class="quiz-step-p">
+        {{ 'MY_EMERGENCY_SAVINGS_PLAN.START.TEXT_1' | translate }}
+      </p>
+      <p class="quiz-step-p">
+        {{ 'MY_EMERGENCY_SAVINGS_PLAN.START.TEXT_2' | translate }}
+      </p>
+    </div>
+  </div>
+</div>

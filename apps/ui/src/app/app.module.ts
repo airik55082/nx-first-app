@@ -1,25 +1,42 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, APP_BASE_HREF } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule, Routes } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
 import { StartComponent } from './start/start.component';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { environment } from '../environments/environment';
+
 const routes: Routes = [
-  { path: '', component: AppComponent, pathMatch: 'full' },
+  { path: '', redirectTo: '/start', pathMatch: 'full' },
   { path: 'start', component: StartComponent }
 ];
 
+const appBaseHref = environment.BASE_HREF;
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, appBaseHref + 'assets/');
+}
 @NgModule({
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    CommonModule,
+    FlexLayoutModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: { provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient] }
+    })
   ],
   declarations: [AppComponent, StartComponent],
-  providers: [],
+  providers: [ 
+    { provide: APP_BASE_HREF, useValue: appBaseHref }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

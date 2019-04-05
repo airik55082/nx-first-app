@@ -1,0 +1,54 @@
+{ 
+  "MY_EMERGENCY_SAVINGS_PLAN": {
+    "START": {
+      "TITLE": "My Emergency Savings Plan",
+      "SUBTITLE": "Can you afford a $1,000 emergency expense? Most U.S. households can’t.",
+      "PERCENT_LABEL": "61%",
+      "CHART_DESCRIPTION": "of households don’t have $1000 saved for emergencies <br>* Courtesy of Bankrate",
+      "TEXT_1": "No matter where you are financially, a healthy emergency savings account can be the difference between debt and no debt. With an average credit card interest rate of about 18%, it’s probably best to pay with cash.",
+      "TEXT_2": "Discover why you should save for the unexpected."
+    },
+    "INSTRUCTIONS": {
+      "TITLE": "This is your piggy bank.",
+      "TEXT": "It will hold your emergency savings for you. Guide it through the work day and help him make it to the weekend.",
+      "NEXT_BUTTON": "Got it"
+    },
+    "END_SAVINGS": {
+      "HIGH": {
+        "TITLE": "Stuff happens — but that’s no match for you.",
+        "TEXT": "Thanks to your emergency savings, you tackled all of the expenses and minimized your debt. Great job!"
+      },
+      "MID": {
+        "TITLE": "Stuff happens — but you’re on the right path.",
+        "TEXT": "Your emergency savings will need some time to recover, but it saved you from extra debt. Keep saving!"
+      },
+      "LOW": {
+        "TITLE": "Stuff happens. Sometimes there’s no way around it.",
+        "TEXT": "Your emergency savings couldn’t keep you out of debt, but that’s okay! A few tweaks can put you on the right path."
+      }
+    },
+    "SUMMARY": {
+      "THRIVE": {
+        "TITLE": "Thrive in Emergencies",
+        "TEXT": "With a good savings account and smart habits, your emergency savings can protect you from surprise expenses and high credit card interest rates."
+      },
+      "RIGHT_TOOLS": {
+        "TITLE": "The Right Tools",
+        "TEXT": "Optimize your emergency savings with the following offerings from Thrivent®."
+      },
+      "ESSA": {
+        "TITLE": "Open an Emergency Savings Account",
+        "TEXT_1": "Most savings accounts can be used for emergency expenses. Just open one, start depositing and you’re good to go!",
+        "TEXT_2": "For something designed with your emergency funds in mind, open an Emergency Savings Share Account (ESSA) at Thrivent Federal Credit Union.",
+        "BUTTON": "Open an account"
+      },
+      "TTS": {
+        "TITLE": "Emergency savings made easy with Tap to Save™",
+        "TEXT_1": "With Tap to Save™ saving a little every day is just a tap away. Turn spending less into reaching your savings goals.",
+        "TEXT_2": "Skipped the coffee shop? Tap to save what you didn’t spend.",
+        "TEXT_3": "Biked to work? Brought your lunch? Tap to save and watch it grow every day!",
+        "TEXT_4": "Plus, you can sign in with your together account and get started right away."
+      }
+    }
+  }
+}

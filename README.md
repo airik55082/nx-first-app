@@ -68,3 +68,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - `yarn add angular/flex-layout @angular/cdk --save`
   - `rm -rf node_modules/`
   - `yarn`
+- Packages
+  - `npm install @ngx-translate/http-loader --save`
