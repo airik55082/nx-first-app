@@ -9,21 +9,17 @@ import { StartComponent } from './start/start.component';
 import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
-  { path: 'start', component: StartComponent },
-  { path: '', component: AppComponent }
+  { path: '', component: AppComponent, pathMatch: 'full' },
+  { path: 'start', component: StartComponent }
 ];
 
 @NgModule({
   imports: [
-    CommonModule,
-    FlexLayoutModule,
+    BrowserModule,
     RouterModule.forRoot(routes),
-    TranslateModule.forRoot(),
-    BrowserModule
   ],
   declarations: [AppComponent, StartComponent],
   providers: [],
-  bootstrap: [AppComponent],
-  exports: [StartComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
