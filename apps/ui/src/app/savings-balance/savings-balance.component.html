@@ -1,16 +1,19 @@
-<h2>
-  How much do you currently have in emergency savings?
-</h2>
-<div [formGroup]="formGroup">
-  <mat-form-field
-    appearance="standard"
-    class="form-fields-new">
-    <input
-      matInput
-      class="simple-currency-input"
-      [placeholder]="0">
-  </mat-form-field>
+<div fxLayout="column" fxLayoutAlign="center center">
+  <h2>
+    How much do you currently have in emergency savings?
+  </h2>
+  <div [formGroup]="formGroup">
+    <mat-form-field
+      appearance="standard"
+      class="form-fields-new">
+      <input
+        matInput
+        class="simple-currency-input"
+        [placeholder]="0">
+    </mat-form-field>
+  </div>
+  <app-quiz-button
+    routerLink="/confidence-measure">
+    Next
+  </app-quiz-button>
 </div>
-<app-quiz-button>
-  Next
-</app-quiz-button>

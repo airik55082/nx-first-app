@@ -1,0 +1,103 @@
+@import '~@angular/material/theming';
+
+@mixin quiz-view-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  app-quiz-view {
+    .quiz {
+      color: mat-color($foreground, 'quiz-text');
+    }
+
+    .light-background {
+      background-color: mat-color($background, 'light-background');
+    }
+
+    .quiz-pathway {
+      color: mat-color($foreground, 'secondary-text-card');
+    }
+  }
+}
+
+@mixin quiz-components-theme($theme) {
+  @include quiz-view-theme($theme);
+
+  :root {
+    --needs-background: #7a63bc;
+    --wants-background: #f5a623;
+    --savings-background: #6ccc6c;
+    --total-background: #455560;
+    --nws-secondary: #ededed;
+  }
+
+  .quiz-button.mat-raised-button {
+    background-color: var(--quiz-primary) !important;
+    border-radius: 25px;
+    box-shadow: 0px 0px 12px 6px rgba(50, 50, 50, 0.1);
+    color: var(--on-quiz-primary) !important;
+    font-size: 14px;
+    font-weight: bold;
+    height: 50px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    min-width: 155px;
+  }
+
+  .quiz-button.mat-raised-button.need {
+    background-color: var(--needs-background) !important;
+    color: var(--quiz-primary) !important;
+  }
+
+  .quiz-button.mat-raised-button.want {
+    background-color: var(--wants-background) !important;
+    color: var(--quiz-primary) !important;
+  }
+
+  .quiz-button.mat-raised-button.savings {
+    background-color: var(--savings-background) !important;
+    color: var(--quiz-primary) !important;
+  }
+
+  .quiz-step-title,
+  .quiz-step-h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--on-quiz-secondary);
+    line-height: 1.2em;
+  }
+
+  .quiz-step-h2 {
+    @include montserrat-bold(24px);
+    color: $outer-space;
+    text-align: left;
+    line-height: 28px;
+    margin: 0 25px;
+  }
+
+  .quiz-step-h3 {
+    @include montserrat-semibold(18px);
+    color: $darkgray;
+    line-height: 22px;
+    margin: 0 25px;
+    text-align: left;
+  }
+
+  .quiz-step-p {
+    @include montserrat-medium(14px);
+    color: $darkgray;
+    line-height: 21px;
+    margin: 0 15px;
+    text-align: left;
+  }
+
+  .quiz-step-description {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--on-primary-muted);
+    line-height: 1.5em;
+    padding: 5px 0;
+    margin-bottom: 20px;
+  }
+}
+
+@include quiz-components-theme($theme);

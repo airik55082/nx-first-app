@@ -17,11 +17,13 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuizButtonComponent } from './quiz-button/quiz-button.component';
+import { ConfidenceMeasureComponent } from './confidence-measure/confidence-measure.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/start', pathMatch: 'full' },
   { path: 'start', component: StartComponent },
-  { path: 'savings-balance', component: SavingsBalanceComponent }
+  { path: 'savings-balance', component: SavingsBalanceComponent },
+  { path: 'confidence-measure', component: ConfidenceMeasureComponent }
 ];
 
 const appBaseHref = environment.BASE_HREF;
@@ -45,11 +47,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatInputModule,
     BrowserAnimationsModule
   ],
-  declarations: [AppComponent, StartComponent, SavingsBalanceComponent, QuizButtonComponent],
+  declarations: [AppComponent, StartComponent, SavingsBalanceComponent, QuizButtonComponent, ConfidenceMeasureComponent],
   providers: [ 
     { provide: APP_BASE_HREF, useValue: appBaseHref }
   ],
   bootstrap: [AppComponent],
-  exports: [SavingsBalanceComponent, QuizButtonComponent]
+  exports: [SavingsBalanceComponent, QuizButtonComponent, ConfidenceMeasureComponent]
 })
 export class AppModule {}
