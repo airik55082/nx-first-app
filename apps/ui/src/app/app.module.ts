@@ -12,6 +12,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { environment } from '../environments/environment';
 import { SavingsBalanceComponent } from './savings-balance/savings-balance.component';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { QuizButtonComponent } from './quiz-button/quiz-button.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/start', pathMatch: 'full' },
@@ -33,13 +38,18 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     TranslateModule.forRoot({
       loader: { provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient] }
-    })
+    }),
+    // FormBuilder
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule
   ],
-  declarations: [AppComponent, StartComponent, SavingsBalanceComponent],
+  declarations: [AppComponent, StartComponent, SavingsBalanceComponent, QuizButtonComponent],
   providers: [ 
     { provide: APP_BASE_HREF, useValue: appBaseHref }
   ],
   bootstrap: [AppComponent],
-  exports: [SavingsBalanceComponent]
+  exports: [SavingsBalanceComponent, QuizButtonComponent]
 })
 export class AppModule {}

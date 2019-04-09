@@ -1,0 +1,62 @@
+@import '~@angular/material/theming';
+// @import 'core/theme/variables.scss';
+@import '../../../../../libs/shared/theme/src/lib/variables.scss';
+
+.form-fields-new {
+  .mat-form-field-label,
+  input,
+  .mat-select-value-text {
+    color: $charcoal-black;
+  }
+  .mat-form-field-underline {
+    background-color: $charcoal-black;
+  }
+  .mat-select-arrow {
+    color: $charcoal-black;
+  }
+  .mat-checked .mat-slide-toggle-bar {
+    background-color: $tea-green;
+  }
+  .mat-checked .mat-slide-toggle-thumb {
+    background-color: $tea-green;
+  }
+}
+
+::ng-deep {
+  .question-text {
+    font-size: 14px !important;
+    font-weight: 500;
+    text-align: left;
+    color: var(--on-primary-muted);
+    line-height: 1.5em !important;
+  }
+}
+
+:host {
+  width: 100%;
+  max-width: 260px;
+  margin: auto;
+}
+
+.dollar-container {
+  position: absolute;
+  font-size: 40px !important;
+  top: 0;
+  left: -0.7em;
+}
+
+.dollar-text {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 40px !important;
+  color: var(--on-quiz-secondary);
+  text-align: center;
+}
+
+.simple-currency-input {
+  font-size: 70px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  font-weight: bold;
+  color: var(--on-quiz-secondary);
+}

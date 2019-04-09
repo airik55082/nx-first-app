@@ -73,5 +73,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - Theme
   - `ng generate lib theme --directory=shared`
     - defaults
-- Add `
-    - `ng g component savings-balance --project=ui --export`
+- `ng g component savings-balance --project=ui --export`
+- `npm install --save @angular/material @angular/cdk @angular/animations`
